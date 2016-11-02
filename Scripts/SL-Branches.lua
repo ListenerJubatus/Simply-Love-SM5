@@ -101,7 +101,7 @@ end
 
 Branch.PlayerOptions = function()
 	if SCREENMAN:GetTopScreen():GetGoToOptions() then
-		return "ScreenPlayerOptions"
+		return "ScreenNestyPlayerOptions"
 	else
 		return "ScreenGameplay"
 	end

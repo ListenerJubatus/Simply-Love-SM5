@@ -34,4 +34,9 @@ end
 
 t[#t+1] = LoadActor("./Shared/BPMDisplay.lua")
 
+-- Let's break stuff.
+	
+	t[#t+1]= notefield_prefs_actor()
+	t[#t+1]= notefield_mods_actor()
+
 return t
