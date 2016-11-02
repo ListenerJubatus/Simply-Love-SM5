@@ -207,9 +207,6 @@ for pn, menu in pairs(menus) do
 		InitCommand= function(self)
 			self:xy(menu_x[pn], 150)
 		end;
-		OnCommand=function(self)
-			self:diffusealpha(0):zoomx(0.6):smooth(0.3):diffusealpha(1):zoomx(1)
-		end;
 		OffCommand=function(self)
 			self:smooth(0.3):diffusealpha(0)
 		end;		
@@ -219,14 +216,14 @@ for pn, menu in pairs(menus) do
 		translation_section= "notefield_options",
 		num_displays= 1, pn= pn, el_height= 22,
 		menu_sounds= {
-			pop= THEME:GetPathS("Common", "Cancel"),
-			push= THEME:GetPathS("_common", "row"),
-			act= THEME:GetPathS("Common", "value"),
+			pop= THEME:GetPathS("ScreenPlayerOptions", "cancel all"),
+			push= THEME:GetPathS("Common", "start"),
+			act= THEME:GetPathS("Common", "start"),
 			move= THEME:GetPathS("ScreenTitleMenu", "change"),
 			move_up= THEME:GetPathS("ScreenTitleMenu", "change"),
 			move_down= THEME:GetPathS("ScreenTitleMenu", "change"),
-			inc= THEME:GetPathS("_switch", "up"),
-			dec= THEME:GetPathS("_switch", "down"),
+			inc= THEME:GetPathS("_nestmenu", "up"),
+			dec= THEME:GetPathS("_nestmenu", "down"),
 		},
 		display_params= {
 			el_zoom= .75, item_params= item_params, item_mt= nesty_items.value,
@@ -261,7 +258,7 @@ for pn, menu in pairs(menus) do
 	frame[#frame+1]= Def.BitmapText{
 		Font= "_wendy white", Text= "READY!", InitCommand= function(self)
 			ready_indicators[pn]= self
-			self:xy(menu_x[pn], 106):zoom(1.5):diffuse(Color.Green):diffusealpha(0)
+			self:xy(menu_x[pn], 50):zoom(0.5):diffuse(Color.Green):diffusealpha(0)
 		end,
 		show_readyCommand= function(self)
 			self:stoptweening():decelerate(.5):diffusealpha(1)
